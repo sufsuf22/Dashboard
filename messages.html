@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/dashboard.css" type="text/css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <title>Messages</title>
+</head>
+<body>
+    <div class="container">
+        <div class="message-box">
+            <form action="#">
+                <div class="concel">
+                    <span></span>
+                    <span></span>
+                </div>
+                <p>Send an email message.</p>
+                <div class="error">
+                    <div><i class="fa fa-exclamation-circle"></i> <span>Error <p>this is an error messages.</p></span></div>
+                    <div class="er-concel">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="success">
+                    <div><i class="fa fa-check"></i> <span>Error <p>The message has been sent successfully.</p></span></div>
+                    <div class="success-concel">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <input type="text" value="email@gmail.com">
+                <input type="text" placeholder="to">
+                <input type="text" placeholder="subject">
+                <textarea name="" id="" cols="30" rows="10">send a message</textarea>
+                <input type="submit" name="send" value="Send">
+            </form>
+        </div>
+     <!-- side menu -->
+     <div class="sider">
+        <span class="logo">MIJY.</span>
+        <div class="sider-menu">
+        <a href="dashboard.html"><i class="fa fa-home"></i><span class="sider-menu-txt">Dashboard</span></a>
+        <a href="profile.html" class="link"><i class="fa fa-user"></i><span class="sider-menu-txt">Profile</span></a>
+        <a href="projects.html" class="link"><i class="fa fa-bell"></i><span class="sider-menu-txt">Porjects</span> <p>23</p></a>
+        <a href="messages.html" class="link"><i class="fa fa-envelope"></i><span class="sider-menu-txt">Messages</span> <p>13</p></a>
+        <a href="settings.html" class="link"><i class="fa fa-cog"></i><span class="sider-menu-txt">Setting</span></a>
+        <a href="logout.php" class="link"><i class="fa fa-sign-out"></i><span class="sider-menu-txt">Logout</span></a>
+        </div>
+    </div>
+    <!-- end of side menu -->
+     <!-- main section -->
+    <section class="main">
+    <header>
+        <div class="menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <span class="logo-h">MIJY.</span>
+        <div class="search-box">
+        <form action="#" method="post">
+            <input type="text" name="search" placeholder="Search">
+            <button><i class="fa fa-search"></i></button>
+        </form>
+        </div>
+        <div class="profile">
+            <i class="fa fa-bell One"><span>13</span></i>
+            <i class="fa fa-envelope Two"><span>23</span></i>
+            <div class="profile-details">
+                <img src="images/pic.png" alt="img" width="50" height="50" id="profile-img">
+            </div>
+             
+            <span class="caret"></span>
+            <div class="profile-menu">
+                    <a href="profile.html" class="link"><i class="fa fa-user"></i>Profile</a>
+                    <a href="projects.html" class="link"><i class="fa fa-bell"><span>23</span></i>Porjects</a>
+                    <a href="messages.html" class="link"><i class="fa fa-envelope"><span>13</span></i>Messages</a>
+                    <a href="settings.html" class="link"><i class="fa fa-cog"></i>Setting</a>
+                    <p id="mood">
+                        <i class="fa fa-moon-o dark-mood"></i>
+                        <i class="fa fa-sun-o light-mood" id="icon-l-mood"></i>
+                        <span class="mood-text dark-mood">Dark mood</span>
+                        <span class="mood-text light-mood">Light mood</span>
+                    </p>
+                    <a href="logout.php" class="link"><i class="fa fa-sign-out"></i>Logout</a>
+                </div>
+        </div>
+    </header>
+   
+        <!-- messages -->
+        <div class="messages m-page">
+            <div class="messages-title m-page-title">
+            <span>Messages <span class="inside">recived</span></span>
+            <a href="#">view less</a>
+            </div>
+
+            <div class="message-content">
+                <div class="message-details">
+                    <i class="fa fa-user"></i>
+                    <div>
+                        <span>jhon doe</span>
+                        <p>jhon@gmail.com</p>
+                    </div>
+                </div>
+                <div class="message-body">
+                    <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, corrupti
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, praesentium?.</p>
+                </div>
+                <div class="message-action">
+                    <P class="date">03 min ago</P>
+                    <a href="#"><i class="fa fa-reply Reply"></i></a>
+                    <i class="fa fa-trash"></i>
+                </div>
+            </div>
+
+            <div class="message-content">
+                <div class="message-details">
+                    <i class="fa fa-user"></i>
+                    <div>
+                        <span>jhon doe</span>
+                        <p>jhon@gmail.com</p>
+                    </div>
+                </div>
+                <div class="message-body">
+                    <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, corrupti
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, praesentium?.</p>
+                </div>
+                <div class="message-action">
+                    <P class="date">03 min ago</P>
+                    <a href="#"><i class="fa fa-reply Reply"></i></a>
+                    <i class="fa fa-trash"></i>
+                </div>
+            </div>
+
+            <div class="message-content">
+                <div class="message-details">
+                    <i class="fa fa-user"></i>
+                    <div>
+                        <span>jhon doe</span>
+                        <p>jhon@gmail.com</p>
+                    </div>
+                </div>
+                <div class="message-body">
+                    <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, corrupti
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, praesentium?.</p>
+                </div>
+                <div class="message-action">
+                    <P class="date">03 min ago</P>
+                    <a href="#"><i class="fa fa-reply Reply"></i></a>
+                    <i class="fa fa-trash"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </section> <!-- end of main-->
+    </div> <!-- end of container-->
+    <section class="footer">
+        <p><span>Created with <i class="fa fa-heart"></i> By <strong>Mustafa</strong></span> <span>|</span> <span>Copy Rights Recived &copy; 2022.</span></p>
+    </section>
+
+    <script src="js/msgs.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/IntetsectionObserver.js"></script>
+</body>
+</html>
