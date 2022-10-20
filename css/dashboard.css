@@ -1,1 +1,1535 @@
+@font-face {
+    font-family: 'Petemoss';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/petemoss/v3/A2BZn5tA2xgtGWHZgykZuqc.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+/* root colors */
+:root {
+    --primary: #f9fafb; 
+    --secondary: #f0f3f4; 
+    --accent:  #3fb6dc;
+    --clr: #293241;
+    --txt-clr: #868697;
+    --danger: #e55c57;
+    --success: #2cd18a;
+    --success-bg: rgba(44, 209, 138, 0.2);
+    --danger-bg: rgba(229, 92, 87, 0.2);
+    --secn1: rgba(255, 200, 0, 0.2);
+    --secn2: rgba(255, 112, 82, 0.2);
+    --secn3: rgba(63, 182, 220, 0.2);
+    --secn4: rgba(45, 199, 109, 0.2);
+    --secn5:  rgba(117, 64, 238, 0.1);
+    --acc1: #ffc800;
+    --acc2: #ff7052;
+    --acc3: #3fb6dc;
+    --acc4: #2dc76d;
+}
 
+/* dark mode */
+.dark_mood {
+    /* --primary:rgba(63, 182, 220, 0.2);  */
+    --primary: #425c81;
+    --secondary: #353b50;
+    --accent: #6dd5fa;
+    --clr: #ede0d4;
+    --txt-clr: #f5f5f6;
+    --danger: #e55c57;
+    --success: #2cd18a;
+    --success-bg: rgba(44, 209, 138, 0.2);
+    --danger-bg: rgba(229, 92, 87, 0.2);
+    --secn1: rgba(255, 200, 0, 0.2);
+    --secn2: rgba(255, 112, 82, 0.2);
+    --secn3: rgba(63, 182, 220, 0.2);
+    --secn4: rgba(45, 199, 109, 0.2);
+    --acc1: #ffc800;
+    --acc2: #ff7052;
+    --acc3: #6dd5fa;
+    --acc4: #2dc76d;
+}
+
+/* darkmood icons */
+.light-mood {
+    display: none;
+}
+
+.light-mood {
+    display: none;
+}
+
+#icon-l-mood {
+    display: none;
+}
+
+.light-mood.active {
+    display: block;
+}
+
+.dark-mood {
+    display: block;
+}
+
+.dark-mood.active {
+    display: none;
+}
+
+#mood {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#mood i {
+    font-size: 1.5em;
+    color: var(--clr);
+}
+
+#mood:hover {
+    padding-left: 7px;
+}
+
+/* success */
+.success {
+    position: relative;
+    background-color: var(--success-bg);
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 2px solid var(--success);
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.5s ease-in;
+}
+
+.success div {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    padding-left: 5px;
+}
+
+.success div i {
+    background-color: var(--primary);
+    color: var(--success);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.success div span {
+    padding-left: 10px;
+    color: var(--success);
+    width: 100%;
+}
+.success div span p {
+    color: var(--txt-clr);
+    padding-top: 3px;
+}
+
+.success .success-concel {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.success .success-concel span {
+    background-color: var(--success);
+    width: 100%;
+    height: 3px;
+    border-radius: 3px;
+}
+
+.success .success-concel:hover {
+    cursor: pointer;
+}
+
+.success .success-concel span:nth-child(1) {
+    transform: rotate(45deg) translateX(1px) translateY(1px);
+}
+
+.success .success-concel span:nth-child(2) {
+    transform: rotate(-45deg) translateX(1px) translateY(-1px);
+}
+
+
+.success.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* error */
+.error {
+    position: relative;
+    background-color: var(--danger-bg);
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 2px solid var(--danger);
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.5s ease-in;
+}
+
+.error div {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    padding-left: 5px;
+}
+
+.error div i {
+    background-color: var(--primary);
+    color: var(--danger);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error div span {
+    padding-left: 10px;
+    color: var(--danger);
+    width: 100%;
+}
+.error div span p {
+    color: var(--txt-clr);
+    padding-top: 3px;
+}
+
+.error .er-concel {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.error .er-concel span {
+    background-color: var(--danger);
+    width: 100%;
+    height: 3px;
+    border-radius: 3px;
+}
+
+.error .er-concel:hover {
+    cursor: pointer;
+}
+
+.error .er-concel span:nth-child(1) {
+    transform: rotate(45deg) translateX(1px) translateY(1px);
+}
+
+.error .er-concel span:nth-child(2) {
+    transform: rotate(-45deg) translateX(1px) translateY(-1px);
+}
+
+.error.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+
+
+/*sun icon rotation*/
+@keyframes rotate {
+    0% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.rotate {
+    animation: rotate 5s linear  infinite;
+}
+
+/* config */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--secondary);
+}
+
+i {
+    color: var(--secondary);
+}
+
+html{
+    /* font-family: 'El Messiri', cursive; */
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--accent);
+}
+
+/* body */
+body {
+    background: var(--secondary);
+    font-size: 16px;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.sider {
+    background-color: var(--accent);
+    position: relative;
+    width: 30%;
+    height: 100V;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    transition: width 0.3s ease-in;
+}
+
+.sider .logo {
+    background-color: var(--primary);
+    color: var(--accent);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.sider .logo.Dark-Mood {
+    background-color: #f9fafb;
+    color: var(--accent);
+}
+
+.sider .sider-menu {
+    width: 100%;
+    height: 70%;
+    padding: 40px 20px;
+    margin-top: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.sider .sider-menu a {
+    position: relative;
+    color: var(--clr);
+}
+
+.sider .sider-menu a i{
+    position: relative;
+    font-size: 1.5em;
+    color: var(--clr);
+    padding-right: 10px;
+}
+
+.sider .sider-menu a:hover {
+    color: var(--primary);
+}
+
+.sider .sider-menu a:hover i{
+    padding-right: 15px;
+    color: var(--primary);
+}
+
+.sider .sider-menu a p {
+    background: var(--danger);
+    color: var(--clr);
+    position: absolute;
+    top: 0%;
+    right: 10px;
+    width: 30px;
+    height: 100%;
+    border-radius: 50%;
+    font-size: initial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease-in-out;
+}
+
+.sider .sider-menu a p.active {
+    top: -10px;
+    left: 24px;
+}
+
+.sider.active {
+    width: 8%;
+}
+
+.sider-menu-txt.active {
+    display: none;
+    transition: all 1s ease-in-out;
+}
+
+.main {
+    padding-bottom: 40px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+}
+
+header {
+    background: var(--primary);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10%;
+    color: var(--clr);
+    padding-inline: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+header .menu {
+    background: var(--accent);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    gap: 3px;
+    width: 30px;
+    height: 30px;
+}
+
+header .menu:hover {
+    cursor: pointer;
+}
+
+header .menu .bar {
+    background: var(--clr);
+    width: 25px;
+    height: 4px;
+    border-radius: 5px;
+}
+
+header .logo-h {
+    background-color: var(--acc3);
+    color: var(--secondary);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box {
+    background-color: var(--secondary);
+    width: 50%;
+    height: 2.5em;
+    border-radius: 10px;
+}
+
+.search-box form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.search-box form input{
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    line-height: none;
+}
+
+.search-box form input::placeholder  {
+    padding-left: 15px;
+}
+
+.search-box form input::-moz-placeholder {
+    padding-left: 15px;
+}
+
+.search-box form input::-webkit-input-placeholder {
+    padding-left: 15px;
+}
+
+.search-box  form button {
+    background-color: transparent;
+    font-size: 1.5em;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+}
+
+.search-box  form button i {
+    color: var(--clr); 
+    cursor: pointer;
+}
+
+.profile {
+    position: relative;
+    right: -4%;
+    width: 20%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+}
+
+.profile i {
+    position: relative;
+    font-size: 1.5em;
+    color: var(--clr);
+}
+
+.profile i:hover {
+    cursor: pointer;;
+}
+
+.profile i span {
+    background: var(--danger);
+    color: var(--clr);
+    position: absolute;
+    top: -40%;
+    right: -40%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    font-size: initial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile .profile-details {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 5px;
+}
+
+.profile .profile-details img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.profile .profile-details img:hover {
+    cursor: pointer;
+}
+
+.profile .profile-details p {
+    color: var(--clr);
+}
+
+.request-notification,
+.email-notification {
+    background-color: var(--primary);
+    position: absolute;
+    top: 117%;
+    right: 0;
+    height: auto;
+    width: 33vw;
+    padding: 5px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.request-notification p,
+.email-notification p {
+    padding: 10px;
+}
+
+.request-notification .notifiy-details,
+.email-notification .email-details {
+    position: relative;
+    background-color: var(--secondary);
+    border-radius: 5px;
+    box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.request-notification .notifiy-details::before,
+.email-notification .email-details::before {
+    background-color: var(--accent);
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.request-notification .notifiy-details::before {
+    top: 0;
+    left: 0;
+}
+
+.email-notification .email-details::before {
+    top: -5px;
+    left: 0;
+}
+
+.request-notification .notifiy-details.active::before,
+.email-notification .email-details.active::before {
+    background-color: var(--success);
+}
+
+.request-notification .notifiy-details .header-details {
+    position: relative;
+    padding: 5px 0;
+    color: var(--txt-clr);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 5px;
+}
+
+.request-notification .notifiy-details .header-details i:nth-child(1) {
+    background-color: var(--primary);
+    font-size: 1.5em;
+    color: var(--accent);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.request-notification .notifiy-details .header-details span:nth-child(2),
+.request-notification .notifiy-details .header-details span:nth-child(6) {
+    color: var(--clr);
+}
+
+.request-notification .notifiy-details .header-details .fa-trash {
+    position: absolute;
+    right: 10px;
+}
+
+.request-notification .notifiy-details .footer-details,
+.email-notification .email-footer {
+    padding: 10px 0px;
+}
+
+.email-notification .email-details .email-body {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 0;    
+}
+.email-notification .email-details .email-body div span:nth-child(1) {
+    color: var(--clr);
+    margin-right: 5px;
+}
+
+.email-notification .email-details .email-body div span:nth-child(2) {
+    color: var(--txt-clr);
+}
+
+.email-notification .email-details .email-body i {
+    position: absolute;
+    right: 0;
+    color: var(--txt-clr);
+}
+
+.request-notification.active {
+    display: flex;
+}
+
+.email-notification.active {
+    display: flex;
+}
+
+.profile-menu {
+    background: var(--secondary);
+    position: absolute;
+    top: 140%;
+    right: 0;
+    width: 60%;
+    height: auto;
+    display: none;
+    flex-flow: column wrap;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 3px 3px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: all 0.5s ease-in;
+}
+
+.profile-menu a:hover {
+    color: var(--accent);
+    padding-left: 10px;
+}
+
+.profile-menu.active {
+    display: flex;
+    opacity: 1;
+}
+
+.profile-menu a {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 10px;
+    color: var(--clr);
+}
+
+.profile .caret {
+    background: var(--secondary);
+    position: absolute;
+    display: none;
+    top: 137%;
+    right: 5%;
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg);
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.profile .caret.active {
+    display: block;
+}
+
+.main .cards {
+    width: 100%;
+    height: auto;
+    margin-top: 9%;
+    padding-left: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+}
+
+.main .cards .card {
+    background-color: var(--primary);
+    position: relative;
+    width: 23%;
+    height: 140px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.main .cards .card.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.main .cards .c-1 {
+    transition: all 0.4s ease-in 0s;
+}
+
+.main .cards .c-2 {
+    transition: all 0.4s ease-in 0.1s;
+}
+.main .cards .c-3 {
+    transition: all 0.4s ease-in 0.2s;
+}
+.main .cards .c-4 {
+    transition: all 0.4s ease-in 0.3s;
+}
+
+.main .cards .card i {
+    position: absolute;
+    font-size: 1.5em;
+    padding: 10px;
+    top: 9%;
+    left: -15%;
+    border-radius: 50%;
+    transition: all 0.5s ease-in;
+}
+
+.main .cards .card i.active {
+    left: 9%;
+}
+
+.main .cards .card .fa-envelope {
+    background-color: var(--secn1);
+    color: var(--acc1);
+}
+
+.main .cards .card .fa-code {
+    background-color: var(--secn2);
+    color: var(--acc2);
+}
+
+.main .cards .card .fa-users {
+    background-color: var(--secn3);
+    color: var(--acc3);
+}
+
+.main .cards .card .fa-check {
+    background-color: var(--secn4);
+    color: var(--acc4);
+}
+
+.main .cards .card p {
+    font-size: 1.2em;
+    color: var(--txt-clr);
+}
+
+.main .cards .card span {
+    color: var(--clr);
+}
+
+.main .cards .card span {
+    font-size: 1.5em;
+}
+
+.main .cards .card strong {
+    color: var(--accent);
+}
+
+.main .cards .card:hover {
+    cursor: pointer;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1);
+}
+
+.main .cards .card:hover i,
+.main .cards .card:hover strong {
+    color: var(--accent);
+}
+
+.messages {
+    width: 64%;
+    height: auto;
+    color: var(--clr);
+    padding-left: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
+}
+
+.messages .messages-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+
+.messages  .messages-title a{
+    background-color: var(--accent);
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.messages span {
+    font-weight: bold;
+}
+
+.messages span .inside{
+    color: var(--acc3);
+}
+
+.messages .message-content {
+    background-color: var(--primary);
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 2px;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.5s ease-in;
+}
+
+.messages .message-content.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.messages .message-content .message-details {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.messages .message-content .message-details div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.messages .message-content .message-details div span{
+    font-weight: bolder;
+}
+
+.messages .message-content .message-details i {
+    background-color: var(--secn3);
+    font-size: 1.5em;
+    color: var(--acc3);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.messages .message-content .message-body {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.messages .message-content .message-body p {
+    word-wrap: break-word;
+    color: var(--txt-clr);
+    padding: 5px 0;
+}
+
+.messages .message-content .message-action {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 30px;
+}
+
+.messages .message-content .message-action .date {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: var(--txt-clr);
+}
+
+.messages .message-content .message-action i {
+    font-size: 1.5em;
+    color: var(--acc2);
+}
+
+.messages .message-content .message-action .fa-reply {
+    background-color: var(--secn3);
+    color: var(--acc3);
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.messages .message-content:hover {
+    box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.message-box {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.message-box .concel {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.message-box .concel span {
+    background-color: var(--danger);
+    width: 100%;
+    height: 4px;
+    border-radius: 3px;
+}
+
+.message-box .concel:hover {
+    cursor: pointer;
+}
+
+.message-box .concel span:nth-child(1) {
+    transform: rotate(45deg) translateX(2px) translateY(1px);
+}
+
+.message-box .concel span:nth-child(2) {
+    transform: rotate(-45deg) translateX(1px) translateY(-1px);
+}
+
+.message-box form {
+    background-color: var(--primary);
+    position: relative;
+    border-radius: 5px;
+    padding: 20px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.5s ease-in-out;
+}
+
+.message-box form p {
+    color: var(--txt-clr);
+}
+
+.message-box form input {
+    background-color: var(--secondary);
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.message-box form textarea {
+    background-color: var(--secondary);
+    border-radius: 5px;
+    width: 100%;
+}
+
+.message-box form input[type="submit"] {
+    background-color: var(--accent);
+    text-align: center;
+    color: var(--primary)
+}
+
+.message-box form input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+.message-box.active {
+    display: flex;
+}
+
+.message-box .concel,
+.error .er-conel {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.requests {
+    width: 32%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 3px 1px;
+}
+
+.requests .request-title {
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.requests .request-title span {
+    color: var(--clr);
+}
+
+.requests .request-title a {
+    background-color: var(--accent);
+    border-radius: 3px;
+    height: 30px;
+    padding: 1px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.requests span {
+    font-weight: bold;
+    line-height: 40px;
+}
+
+.requests .time {
+    font-weight: normal;
+    color: var(--txt-clr);
+}
+
+.requests .request-card {
+    background-color: var(--primary);
+    width: 100%;
+    border-radius: 5px;
+    padding: 7px 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transform-style: preserve-3d;
+    transform: translateX(5%);
+    transition: all 0.5s ease-in;
+}
+
+.requests .request-card.active {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.requests .request-h {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 10px;
+    width: 40%;
+}
+
+.requests .request-h i {
+    color: var(--acc1)
+}
+
+.requests .request-h div p {
+    color: var(--txt-clr)
+}
+
+.requests .request-card i {
+    font-size: 1.5em;
+}
+
+.requests .request-card .fa-eye {
+    color: var(--acc3);
+}
+
+.requests .request-card .fa-trash {
+    color: var(--acc2);
+}
+
+.requests .request-card i:hover {
+    cursor: pointer;
+}
+
+.pro-settings {
+    width: 81vw;
+    min-height: 100%;
+    padding: 10px;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.pro-settings .por-settings-h {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.5s ease-in;
+}
+
+.pro-settings .por-settings-h img {
+    width: 150px;
+    height: 150px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+}
+
+.pro-settings .feedback {
+    width: 60%;
+    padding: 0px 20px;
+}
+
+.pro-settings form {
+    width: 60%;
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.5s ease-in 0.2s;
+}
+
+.pro-settings form div {
+    width: 45%;
+    height: 70px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.pro-settings form div input {
+    background-color: var(--primary);
+    width: 100%;
+    height: 60%;
+    border-radius: 5px;
+}
+
+.pro-settings form div:nth-child(6) {
+    position: relative;
+}
+
+.pro-settings form div:nth-child(6) input {
+    position: absolute;
+    left: 0;
+    bottom: 2.5px;
+    opacity: 0;
+    z-index: 2;
+}
+
+.pro-settings form div:nth-child(6) input:hover {
+    cursor: pointer;
+}
+
+.pro-settings form div:nth-child(6) i,
+.pro-settings form div:nth-child(6) span {
+    position: absolute;
+    z-index: 1;
+}
+
+.pro-settings form div:nth-child(6) i{
+    bottom: 5px;
+    left: 5px;
+    color: var(--clr);
+    font-size: 2em;
+}
+
+.pro-settings form div:nth-child(6) span {
+    bottom: 15px;
+    left: 50px;
+}
+
+.pro-settings form div:nth-child(7),
+.pro-settings form div:nth-child(8) {
+    background-color: var(--accent);
+    width: 50%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.5s ease-in 0.3s;
+}
+
+.pro-settings form div:nth-child(8) {
+    background-color: var(--primary);
+    border: 2px solid var(--danger);
+    color: var(--danger);
+    opacity: 1;
+    transform: translateY(-10px);
+    transition: all 0.5s ease-in 0.4s;
+}
+
+.pro-settings form div button{
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.pro-settings form div button:hover {
+    box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    color: #fff;
+}
+
+.pro-settings form div:nth-child(8) button {
+    color: var(--danger);
+}
+
+.pro-settings form div:nth-child(8):hover button {
+    background-color: var(--danger);
+    color: var(--primary);
+}
+
+.pro-settings .animate.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+.m-page, .req-page {
+    width: 81vw;
+    height: 100%;
+    padding: 20px;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.m-page .m-page-title {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer {
+    width: 100%;
+    padding: 20px;
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p {
+    color: var(--clr);
+}
+
+.footer p i,
+.footer p strong {
+    color: var(--accent);
+}
+
+/* media queiers */
+@media screen and (max-width: 992px) {
+    .sider {
+        position: absolute;
+        height: 100vh;
+        top: 9.5%;
+        left: -50%;
+        z-index: 3;
+    }
+    .main {
+        width: 100%;
+    }
+    header .menu {
+        display: none;
+    }
+    header .logo-h {
+        display: flex;
+    }
+    
+    .search-box {
+        width: 90%;
+    }
+
+    header .profile .One,
+    header .profile .Two {
+        display: none;
+    }
+
+    .messages {
+        width: 95%;
+        margin: 20% auto 0 auto;
+        padding: 20;
+    }
+
+    .requests {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .pro-settings {
+        width: 100vw;
+    }
+
+    .pro-settings .feedback {
+        width: 100%;
+    }
+
+    .pro-settings form {
+        width: 100%;
+    }
+
+    .request-notification,
+    .email-notification {
+        right: 15%;
+        width: 40vw;
+    }
+
+}
+
+@media screen and (max-width: 877px) {
+    .main .cards {
+        width: 95%;
+        margin-top: 15%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+   
+}
+
+@media screen and (max-width: 775px) {
+    .profile-menu {
+        width: 200%;
+    }
+
+    .main .cards .card {
+        width: 48%;
+    }
+
+    .message-box form {
+        width: 95%;
+    }
+
+    .request-notification,
+    .email-notification {
+        width: 50vw;
+    }
+
+}
+
+@media screen and (max-width: 645px) {
+    .request-notification {
+        width: 60vw;
+    }
+}
+
+@media  screen and (max-width: 548px) {
+    .main .cards {
+        margin-top: 20%;
+    }
+    .main .cards .card {
+        width: 100%;
+    }
+
+    header {
+        gap: 20px;
+    }
+
+    header .logo-h {
+        margin-left: -10px;
+    }
+
+    .messages {
+        margin: 30% auto 0 auto;
+    }
+
+    .pro-settings {
+        margin-top: 20%;
+    }
+
+    .pro-settings form div {
+        width: 90%;
+    }
+
+    .request-notification,
+    .email-notification {
+        width: 82vw;
+        right: 0%;
+    }
+
+}
+
+@media screen and (max-width: 381px) {
+    .main .cards {
+        margin-top: 35%;
+    }
+
+    .footer p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-menu {
+        width: 300%;
+    }
+
+    .request-notification,
+    .email-notification {
+        width: 98vw;
+        right: 0%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .main .cards {
+        margin-top: 40%;
+    }
+
+    .request-notification,
+    .email-notification {
+        width: 100vw;
+        right: -15%;
+    }
+}
